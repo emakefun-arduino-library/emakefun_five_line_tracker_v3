@@ -16,7 +16,8 @@ enum MemoryAddress : uint8_t {
 
 }
 
-FiveLineTracker::FiveLineTracker(TwoWire& wire, const uint8_t i2c_address) : wire_(wire), i2c_address_(i2c_address) {}
+FiveLineTracker::FiveLineTracker(TwoWire& wire, const uint8_t i2c_address) : wire_(wire), i2c_address_(i2c_address) {
+}
 
 FiveLineTracker::ErrorCode FiveLineTracker::Initialize() {
   wire_.beginTransmission(i2c_address_);
@@ -110,5 +111,7 @@ uint8_t FiveLineTracker::DigitalValues() {
   return 0x00;
 }
 
-uint8_t FiveLineTracker::DigitalValue(uint8_t channel) { return (DigitalValues() >> channel) & 0x01; }
+uint8_t FiveLineTracker::DigitalValue(uint8_t channel) {
+  return (DigitalValues() >> channel) & 0x01;
+}
 }  // namespace emakefun

@@ -34,10 +34,10 @@ void setup() {
   Serial.println(String(F("five line tracker firmware version: ")) +
                  static_cast<uint32_t>(g_five_line_tracker.FirmwareVersion()));
 
-  const uint16_t high_thresholds[emakefun::FiveLineTracker::kLineNumber] = {450, 400, 410, 400, 430};
+  const uint16_t high_thresholds[emakefun::FiveLineTracker::kLineNumber] = {400, 400, 400, 400, 400};
   g_five_line_tracker.HighThresholds(high_thresholds);
 
-  const uint16_t low_thresholds[emakefun::FiveLineTracker::kLineNumber] = {320, 330, 350, 310, 300};
+  const uint16_t low_thresholds[emakefun::FiveLineTracker::kLineNumber] = {200, 200, 200, 200, 200};
   g_five_line_tracker.LowThresholds(low_thresholds);
 
   Serial.println(F("setup successful"));
