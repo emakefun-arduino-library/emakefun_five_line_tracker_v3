@@ -3,6 +3,7 @@
 #include <Wire.h>
 #include <stdint.h>
 
+namespace emakefun {
 class FiveLineTracker {
  public:
   static constexpr uint8_t kDefaultI2cAddress = 0x50;
@@ -39,3 +40,4 @@ class FiveLineTracker {
   TwoWire& wire_ = Wire;
   const uint8_t i2c_address_ = kDefaultI2cAddress;
 };
+}  // namespace emakefun

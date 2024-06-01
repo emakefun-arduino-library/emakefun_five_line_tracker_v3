@@ -2,8 +2,8 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <stddef.h>
 
+namespace emakefun {
 namespace {
 enum MemoryAddress : uint8_t {
   kMemoryAddressDeviceId = 0x00,
@@ -111,3 +111,4 @@ uint8_t FiveLineTracker::DigitalValues() {
 }
 
 uint8_t FiveLineTracker::DigitalValue(uint8_t channel) { return (DigitalValues() >> channel) & 0x01; }
+}  // namespace emakefun
