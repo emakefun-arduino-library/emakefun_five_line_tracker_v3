@@ -1,4 +1,4 @@
-#include "five_line_tracker.h"
+#include "five_line_tracker_v3.h"
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -94,7 +94,7 @@ uint16_t FiveLineTracker::AnalogValue(uint8_t channel) {
 
   wire_.requestFrom(i2c_address_, sizeof(uint16_t));
   uint16_t value = 0;
-  wire_.readBytes(reinterpret_cast<uint8_t*>(value), sizeof(uint16_t));
+  wire_.readBytes(reinterpret_cast<uint8_t*>(&value), sizeof(uint16_t));
   return value;
 }
 
